@@ -1,4 +1,4 @@
-It looks that Extension 18 is present if TLS 1.2 is used.
+It looks that `EXTENSION 18` is present if **TLS 1.2** is used.
 
 ```
 # LD_LIBRARY_PATH=lib64 bin/openssl s_client -connect 127.0.0.1:24323 -no_tls1_3 -serverinfo 18
