@@ -14,7 +14,7 @@
 #define PORT 24323
 
 unsigned char serverinfo18[] = {
-    0x00, 0x00, 0x11, 0x80,
+    //0x00, 0x00, 0x11, 0x80,
     0x00, 0x12,
     0x00, 0x03,
     0x04, 0x05, 0x06
@@ -67,9 +67,9 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    //if (SSL_CTX_use_serverinfo(ctx, serverinfo18, sizeof(serverinfo18)) != 1) {
-    if (SSL_CTX_use_serverinfo_ex(ctx, SSL_SERVERINFOV2,
-                                  serverinfo18, sizeof(serverinfo18)) != 1) {
+    if (SSL_CTX_use_serverinfo(ctx, serverinfo18, sizeof(serverinfo18)) != 1) {
+    //if (SSL_CTX_use_serverinfo_ex(ctx, SSL_SERVERINFOV2,
+    //                              serverinfo18, sizeof(serverinfo18)) != 1) {
 	fprintf(stderr, "Unable to use serverinfo18:\n");
         ERR_print_errors_fp(stderr);
         exit(EXIT_FAILURE);
